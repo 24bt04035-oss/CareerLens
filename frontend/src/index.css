@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  /* Default Dark Mode & html.dark */
+  html.dark body,
+  html.theme-dark body {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+
+  html.dark header,
+  html.theme-dark header {
+    background-color: rgba(15, 23, 42, 0.92);
+    border-color: #334155;
+  }
+
+  /* Light Mode (html.light / html.theme-light) Comprehensive Styling */
+  html.light body,
+  html.theme-light body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  html.light header,
+  html.theme-light header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: #e2e8f0;
+  }
+
+  /* Glass & Card Main Containers in Light Mode */
+  html.light .glass-panel,
+  html.light .glass-panel-interactive,
+  html.light [class*="bg-slate-900"],
+  html.light [class*="bg-[#07090e]"],
+  html.light [class*="bg-[#0d121f]"],
+  html.light [class*="bg-[#0d111b]"],
+  html.light [class*="bg-[#0c101a]"] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05) !important;
+  }
+
+  /* Specific Card Backings in Light Mode */
+  html.light [class*="bg-amber-950"] {
+    background-color: #fffbeb !important;
+    border-color: #fde68a !important;
+  }
+  html.light [class*="bg-rose-950"] {
+    background-color: #fff1f2 !important;
+    border-color: #fecdd3 !important;
+  }
+  html.light [class*="bg-cyan-950"] {
+    background-color: #f0f9ff !important;
+    border-color: #bae6fd !important;
+  }
+  html.light [class*="bg-emerald-950"] {
+    background-color: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+  }
+
+  /* Inner Callout Boxes (Why It Matters / Recommended Action) */
+  html.light [class*="bg-slate-900/40"],
+  html.light [class*="bg-slate-900/60"],
+  html.light [class*="bg-slate-900/80"],
+  html.light [class*="bg-slate-900/90"],
+  html.light [class*="bg-slate-950"] {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Border Overrides */
+  html.light [class*="border-slate-800"],
+  html.light [class*="border-slate-700"] {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Typography Contrast Overrides */
+  html.light .text-white,
+  html.light h1, html.light h2, html.light h3, html.light h4, html.light h5, html.light h6 {
+    color: #0f172a !important;
+  }
+
+  html.light [class*="text-slate-200"],
+  html.light [class*="text-slate-300"] {
+    color: #334155 !important;
+  }
+
+  html.light [class*="text-slate-400"],
+  html.light [class*="text-slate-500"] {
+    color: #475569 !important;
+  }
+
+  /* Accent Text Contrast in Light Mode */
+  html.light [class*="text-cyan-300"],
+  html.light [class*="text-cyan-400"],
+  html.light [class*="text-cyan-500"] {
+    color: #0284c7 !important;
+  }
+
+  html.light [class*="text-amber-300"],
+  html.light [class*="text-amber-400"],
+  html.light [class*="text-amber-500"] {
+    color: #b45309 !important;
+  }
+
+  html.light [class*="text-emerald-300"],
+  html.light [class*="text-emerald-400"],
+  html.light [class*="text-emerald-500"] {
+    color: #047857 !important;
+  }
+
+  html.light [class*="text-rose-300"],
+  html.light [class*="text-rose-400"],
+  html.light [class*="text-rose-500"] {
+    color: #be123c !important;
+  }
+
+  /* Action Buttons in Light Mode */
+  html.light [class*="bg-cyan-950/60"],
+  html.light [class*="bg-cyan-900/60"],
+  html.light [class*="bg-cyan-400"] {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #0284c7 !important;
+  }
+  html.light [class*="bg-cyan-950/60"] *,
+  html.light [class*="bg-cyan-900/60"] * {
+    color: #ffffff !important;
+  }
+
+  html.light [class*="bg-emerald-950/60"],
+  html.light [class*="bg-emerald-900/60"],
+  html.light [class*="bg-emerald-400"] {
+    background-color: #059669 !important;
+    color: #ffffff !important;
+    border-color: #059669 !important;
+  }
+  html.light [class*="bg-emerald-950/60"] *,
+  html.light [class*="bg-emerald-900/60"] * {
+    color: #ffffff !important;
+  }
+
+  /* Badges in Light Mode */
+  html.light .bg-amber-950\/60 {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #fde68a !important;
+  }
+  html.light .bg-rose-950\/60 {
+    background-color: #ffe4e6 !important;
+    color: #9f1239 !important;
+    border-color: #fecdd3 !important;
+  }
+
+  /* Custom subtle dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #07090e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+/* Glassmorphism & SaaS Dashboard Utilities */
+.glass-panel {
+  background: rgba(13, 17, 27, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-interactive {
+  background: rgba(13, 17, 27, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(18, 24, 38, 0.85);
+  border-color: rgba(56, 189, 248, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
+}
+
+.glass-card-glow {
+  position: relative;
+}
+
+.glass-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(139, 92, 246, 0.15), transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-6px) scale(1.01); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
